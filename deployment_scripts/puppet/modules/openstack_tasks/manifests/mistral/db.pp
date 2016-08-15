@@ -1,4 +1,4 @@
-class fuel-plugin-mistral::mistral::db {
+class openstack_tasks::mistral::db {
 
   notice('MODULAR: mistral/db.pp')
 
@@ -50,4 +50,3 @@ class fuel-plugin-mistral::mistral::db {
   }
 
 }
-

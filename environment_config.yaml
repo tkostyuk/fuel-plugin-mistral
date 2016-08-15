@@ -3,16 +3,17 @@ attributes:
     # Settings group can be one of "general", "security", "compute", "network",
     # "storage", "logging", "openstack_services" and "other".
     group: 'other'
-  fuel-plugin-mistral_text:
-    value: 'Set default value 1.0.2'
-    label: 'Text field'
-    description: 'Description for text field'
-    weight: 25
-    type: "text"
 
   db_password:
     label: 'db_password'
     value: 
+      generator: 'password'
+    weight: 25
+    type: "text"
+
+  user_password:
+    label: 'Keystone password'
+    value:
       generator: 'password'
     weight: 25
     type: "text"
