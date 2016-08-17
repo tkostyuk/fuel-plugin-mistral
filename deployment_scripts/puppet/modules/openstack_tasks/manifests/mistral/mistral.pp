@@ -26,6 +26,7 @@ class openstack_tasks::mistral::mistral {
 
   $mysql_root_password = $mysql_hash['root_password']
   $db_type             = 'mysql'
+  $db_host             = pick($mistral_hash['db_host'], hiera('database_vip'))
   $db_user             = pick($mistral_hash['db_user'], 'mistral')
   $db_name             = pick($mistral_hash['db_name'], 'mistral')
   $db_password         = $mistral_hash['db_password']
