@@ -1,4 +1,4 @@
-class fuel-plugin-mistral::mistral::mistral {
+class openstack_tasks::mistral::mistral {
 
   notice('MODULAR: mistral/mistral.pp')
 
