@@ -1,4 +1,4 @@
-include ::openstack_tasks::mistral::db
+include ::fuel_plugin_mistral_tasks::db
 
 class mysql::config {}
 include mysql::config
