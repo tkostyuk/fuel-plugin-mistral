@@ -3,7 +3,7 @@ name: fuel-plugin-mistral
 # Human-readable name for your plugin
 title: Fuel Mistral plugin
 # Plugin version
-version: '1.0.15'
+version: '1.0.16'
 # Description
 description: Mistral Fuel plugin allows Fuel to deploy OpenStack with Mistral installed and configured
 # Required fuel version
