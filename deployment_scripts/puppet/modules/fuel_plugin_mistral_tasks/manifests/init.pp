@@ -116,5 +116,22 @@ class fuel_plugin_mistral_tasks {
   validate_string($admin_address)
   validate_string($password)
 
+  # VIP part
+
+  $network_metadata = hiera_hash('network_metadata', {})
+
+  # Mistral API runs on Controllers
+  $mistral_api_nodes_hash         = get_nodes_hash_by_roles($network_metadata, ['primary-controller','controller'])
+  $mistral_api_nodes_ips          = ipsort(values(get_node_to_ipaddr_map_by_network_role($mistral_api_nodes_hash, 'management')))
+
+  $public_virtual_ip   = hiera('public_vip')
+  $internal_virtual_ip = hiera('management_vip')
+
+  $public_ssl         = get_ssl_property($ssl_hash, $public_ssl_hash, 'mistral', 'public', 'usage', false)
+  $public_ssl_path    = get_ssl_property($ssl_hash, $public_ssl_hash, 'mistral', 'public', 'path', [''])
+  $internal_ssl       = get_ssl_property($ssl_hash, {}, 'cinder', 'internal', 'usage', false)
+  $internal_ssl_path  = get_ssl_property($ssl_hash, {}, 'cinder', 'internal', 'path', [''])
+
+
 
 }
