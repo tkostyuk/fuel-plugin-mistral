@@ -1,3 +1,4 @@
 .tox
 .build
 *.pyc
+fuel-plugin-mistral-1.0-*
