@@ -4,6 +4,8 @@ class fuel_plugin_mistral_tasks::api {
 
   include fuel_plugin_mistral_tasks
 
-  class { '::mistral::api': }
+  class { '::mistral::api':
+    bind_host => $fuel_plugin_mistral_tasks::bind_host,
+  }
 
 }

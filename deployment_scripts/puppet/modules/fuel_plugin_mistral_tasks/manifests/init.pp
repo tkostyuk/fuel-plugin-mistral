@@ -132,6 +132,10 @@ class fuel_plugin_mistral_tasks {
   $internal_ssl       = get_ssl_property($ssl_hash, {}, 'cinder', 'internal', 'usage', false)
   $internal_ssl_path  = get_ssl_property($ssl_hash, {}, 'cinder', 'internal', 'path', [''])
 
+  # API part
 
+  prepare_network_config(hiera_hash('network_scheme', {}))
+
+  $bind_host          = get_network_role_property('management', 'ipaddr')
 
 }
