@@ -14,7 +14,7 @@ class fuel_plugin_mistral_tasks::mistral_dashboard {
 
   file { $fuel_plugin_mistral_tasks::mistral_horizon_ext_file:
     ensure => file,
-    content => template('fuel_plugin_mistral_tasks/_50_mistral.py'),
+    content => template('fuel_plugin_mistral_tasks/_50_mistral.py.erb'),
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
