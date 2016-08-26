@@ -7,7 +7,7 @@ class fuel_plugin_mistral_tasks::mistral_dashboard {
   }
 
   package { 'mistral-dashboard':
-    ensure => '2.0.0',
+    ensure   => $fuel_plugin_mistral_tasks::mistral_dashboard_version,
     provider => pip,
     require  => Package['python-pip']
   }

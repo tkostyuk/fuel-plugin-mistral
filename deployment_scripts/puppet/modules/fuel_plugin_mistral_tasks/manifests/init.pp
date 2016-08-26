@@ -137,6 +137,7 @@ class fuel_plugin_mistral_tasks {
   prepare_network_config(hiera_hash('network_scheme', {}))
 
   $bind_host          = get_network_role_property('management', 'ipaddr')
-  $mistral_horizon_ext_file = '/usr/share/openstack-dashboard/openstack_dashboard/local/enabled/_50_mistral.py'
+  $mistral_horizon_ext_file =  '/usr/share/openstack-dashboard/openstack_dashboard/local/enabled/_50_mistral.py'
+  $mistral_dashboard_version = '2.0.0'
 
 }
