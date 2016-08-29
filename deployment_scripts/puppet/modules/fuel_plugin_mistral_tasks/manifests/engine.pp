@@ -6,4 +6,7 @@ class fuel_plugin_mistral_tasks::engine {
 
   class { '::mistral::engine': }
 
+  Mistral_config <||> ~> Service[$::mistral::params::engine_service_name]
+  Package['mistral-engine'] -> Service[$::mistral::params::engine_service_name]
+  Package['mistral-engine'] -> Service['mistral-engine']
 }
