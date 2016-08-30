@@ -1,9 +1,12 @@
 class fuel_plugin_mistral_tasks::conf {
 
   notice('MODULAR: fuel_plugin_mistral_tasks/conf.pp')
-
+  $roles = hiera(roles)
   include fuel_plugin_mistral_tasks
-
+  
+  Package <| title == 'mistral-common' |> {
+    name => 'mistral-common',
+  }
   class { '::mistral':
     keystone_password                  => $fuel_plugin_mistral_tasks::mistral_user_password,
     keystone_user                      => $fuel_plugin_mistral_tasks::keystone_user,
@@ -22,5 +25,7 @@ class fuel_plugin_mistral_tasks::conf {
   mistral_config {
     'keystone_authtoken/auth_version': value => $fuel_plugin_mistral_tasks::auth_version;
   }
-
+  if 'base-os' in $roles {
+    class {::mistral::db::sync:}
+  }
 }
