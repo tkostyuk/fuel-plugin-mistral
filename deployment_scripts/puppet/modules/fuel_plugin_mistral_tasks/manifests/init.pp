@@ -107,7 +107,7 @@ class fuel_plugin_mistral_tasks {
   $configure_user         = pick($mistral_hash['configure_user'], true)
   $configure_user_role    = pick($mistral_hash['configure_user_role'], true)
   $service_name           = pick($mistral_hash['service_name'], 'mistral')
-  $service_type           = pick($mistral_hash['service_type'], 'workflow')
+  $service_type           = pick($mistral_hash['service_type'], 'workflowv2')
   $tenant                 = pick($mistral_hash['tenant'], 'services')
 
 
