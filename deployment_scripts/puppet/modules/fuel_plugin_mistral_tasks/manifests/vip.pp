@@ -24,4 +24,11 @@ class fuel_plugin_mistral_tasks::vip {
     balancermember_options => 'check inter 10s fastinter 2s downinter 3s rise 3 fall 3',
   }
 
+  firewall { '300 mistral':
+    chain  => 'INPUT',
+    dport  => $fuel_plugin_mistral_tasks::port,
+    proto  => 'tcp',
+    action => 'accept',
+  }
+
 }
