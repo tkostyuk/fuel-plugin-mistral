@@ -1,6 +1,6 @@
 class fuel_plugin_mistral_tasks::executor {
 
-  notice('MODULAR: fuel_plugin_mistral_tasks/executor.pp')
+  notice('MODULAR: fuel-plugin-mistral/executor.pp')
 
   include fuel_plugin_mistral_tasks
 

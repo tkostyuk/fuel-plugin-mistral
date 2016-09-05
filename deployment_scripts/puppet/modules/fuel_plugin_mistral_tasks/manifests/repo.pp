@@ -1,6 +1,6 @@
 class fuel_plugin_mistral_tasks::repo {
 
-  notice('MODULAR: fuel_plugin_mistral_tasks/repo.pp')
+  notice('MODULAR: fuel-plugin-mistral/repo.pp')
 
   include apt
   

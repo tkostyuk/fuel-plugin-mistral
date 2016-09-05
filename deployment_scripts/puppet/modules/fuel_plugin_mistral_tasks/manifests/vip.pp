@@ -1,6 +1,6 @@
 class fuel_plugin_mistral_tasks::vip {
 
-  notice('MODULAR: fuel_plugin_mistral_tasks/api_ha.pp')
+  notice('MODULAR: fuel-plugin-mistral/vip.pp')
 
   include fuel_plugin_mistral_tasks
 

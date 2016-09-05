@@ -1,6 +1,6 @@
 class fuel_plugin_mistral_tasks::db {
 
-  notice('MODULAR: fuel_plugin_mistral_tasks/db.pp')
+  notice('MODULAR: fuel-plugin-mistral/db.pp')
 
   include fuel_plugin_mistral_tasks
 

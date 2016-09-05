@@ -1,6 +1,6 @@
 class fuel_plugin_mistral_tasks::engine {
 
-  notice('MODULAR: fuel_plugin_mistral_tasks/engine.pp')
+  notice('MODULAR: fuel-plugin-mistral/engine.pp')
 
   include fuel_plugin_mistral_tasks
 

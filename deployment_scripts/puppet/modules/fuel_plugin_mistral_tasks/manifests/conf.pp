@@ -1,6 +1,6 @@
 class fuel_plugin_mistral_tasks::conf {
 
-  notice('MODULAR: fuel_plugin_mistral_tasks/conf.pp')
+  notice('MODULAR: fuel-plugin-mistral/conf.pp')
   $roles = hiera(roles)
   include fuel_plugin_mistral_tasks
   
