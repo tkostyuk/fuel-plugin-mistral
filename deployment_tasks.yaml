@@ -4,8 +4,9 @@
   type: group
   role: [mistral]
 # add more tasks
-  tasks: [hiera]
+  tasks: [globals, logging, hiera, hosts, firewall, connectivity_tests, dns-client, fuel_pkgs, netconfig, tools, ntp-client, reserved_ports, ssl-add-trust-chain, ssl-keys-saving]
   cross-depends:
+    - name: primary-controller
     - name: controller
   parameters:
     strategy:
