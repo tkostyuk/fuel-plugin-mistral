@@ -90,7 +90,9 @@
   cross-depends:
     - name: mistral-conf
       role: self
-    - name : mistral-keystone
+    - name: mistral-keystone
+    - name: mistral-db
+      role: primary-controller
   parameters:
     puppet_manifest: puppet/manifests/api.pp
     puppet_modules: puppet/modules:/etc/puppet/modules
