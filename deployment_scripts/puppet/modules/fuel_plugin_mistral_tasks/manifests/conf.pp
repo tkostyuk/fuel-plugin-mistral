@@ -25,7 +25,5 @@ class fuel_plugin_mistral_tasks::conf {
   mistral_config {
     'keystone_authtoken/auth_version': value => $fuel_plugin_mistral_tasks::auth_version;
   }
-  if 'primary-controller' in $roles {
-    class {::mistral::db::sync:}
-  }
+
 }
