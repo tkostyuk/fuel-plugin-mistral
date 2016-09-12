@@ -93,6 +93,7 @@
     - name: mistral-keystone
     - name: mistral-db
       role: primary-controller
+    - name: mistral-db-sync
   parameters:
     puppet_manifest: puppet/manifests/api.pp
     puppet_modules: puppet/modules:/etc/puppet/modules
