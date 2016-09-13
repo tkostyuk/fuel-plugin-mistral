@@ -8,9 +8,9 @@ class fuel_plugin_mistral_tasks::conf {
     name => 'mistral-common',
   }
   class { '::mistral':
-    keystone_password                  => $fuel_plugin_mistral_tasks::mistral_user_password,
-    keystone_user                      => $fuel_plugin_mistral_tasks::keystone_user,
-    keystone_tenant                    => $fuel_plugin_mistral_tasks::keystone_tenant,
+    keystone_password                  => $fuel_plugin_mistral_tasks::password,
+    keystone_user                      => $fuel_plugin_mistral_tasks::auth_name,
+    keystone_tenant                    => $fuel_plugin_mistral_tasks::tenant,
     auth_uri                           => $fuel_plugin_mistral_tasks::auth_uri,
     identity_uri                       => $fuel_plugin_mistral_tasks::identity_uri,
     database_connection                => $fuel_plugin_mistral_tasks::db_connection,

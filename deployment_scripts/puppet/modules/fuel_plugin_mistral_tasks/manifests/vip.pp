@@ -7,10 +7,10 @@ class fuel_plugin_mistral_tasks::vip {
   # variables to be moved to fuel_plugin_mistral_tasks/manifests/init.pp
 
   openstack::ha::haproxy_service { 'mistral-api':
-    internal_virtual_ip    => $fuel_plugin_mistral_tasks::internal_virtual_ip,
+    internal_virtual_ip    => $fuel_plugin_mistral_tasks::management_vip,
     listen_port            => $fuel_plugin_mistral_tasks::port,
     order                  => '300',
-    public_virtual_ip      => $fuel_plugin_mistral_tasks::public_virtual_ip,
+    public_virtual_ip      => $fuel_plugin_mistral_tasks::public_vip,
     internal               => true,
     public                 => true,
     ipaddresses            => $fuel_plugin_mistral_tasks::mistral_api_nodes_ips,
