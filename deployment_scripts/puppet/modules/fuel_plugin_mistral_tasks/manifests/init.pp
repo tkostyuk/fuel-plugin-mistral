@@ -140,4 +140,12 @@ class fuel_plugin_mistral_tasks {
   $mistral_horizon_ext_file =  '/usr/share/openstack-dashboard/openstack_dashboard/local/enabled/_50_mistral.py'
   $mistral_dashboard_version = '2.0.0'
 
+  # Logging
+
+  $use_syslog    = hiera('use_syslog', true)
+  $use_stderr    = hiera('use_stderr', false)
+  $log_facility  = 'LOG_LOCAL0'
+  $verbose       = hiera('verbose', true) 
+  $debug         = hiera('debug', true)
+
 }

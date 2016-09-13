@@ -20,6 +20,11 @@ class fuel_plugin_mistral_tasks::conf {
     rabbit_password                    => $fuel_plugin_mistral_tasks::rabbit_hash['password'],
     control_exchange                   => $fuel_plugin_mistral_tasks::control_exchange,
     rabbit_ha_queues                   => $fuel_plugin_mistral_tasks::rabbit_ha_queues,
+    use_syslog                         => $fuel_plugin_mistral_tasks::use_syslog,
+    use_stderr                         => $fuel_plugin_mistral_tasks::use_stderr,
+    log_facility                       => $fuel_plugin_mistral_tasks::log_facility,
+    verbose                            => $fuel_plugin_mistral_tasks::verbose,
+    debug                              => $fuel_plugin_mistral_tasks::debug,
   }
 
   mistral_config {
