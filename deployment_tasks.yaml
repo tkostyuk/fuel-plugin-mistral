@@ -100,7 +100,6 @@
     timeout: 360
 
 - id: mistral-vip
-# May not work with dedicated haproxy
   version: 2.1.0
   type: puppet
   groups: [primary-controller, controller]
@@ -109,10 +108,8 @@
       role: self
     - name: mistral-api
       role: self
-# add: if role is primary-controller (was in video)
     - name: cluster-haproxy
       role: self
-# add: if role is controller (was in video)
   parameters:
     puppet_manifest: puppet/manifests/vip.pp
     puppet_modules: puppet/modules:/etc/puppet/modules
@@ -133,7 +130,7 @@
 - id: mistral-engine
   version: 2.1.0
   type: puppet
-  groups: [mistral]
+  groups: [primary-controller, controller, mistral]
   cross-depends:
     - name: mistral-conf
       role: self
@@ -141,11 +138,13 @@
     puppet_manifest: puppet/manifests/engine.pp
     puppet_modules: puppet/modules:/etc/puppet/modules
     timeout: 360
+  condition:
+    yaql_exp: ( $.nodes.where($.role = 'mistral').len() = 0 ) or ( 'mistral' in $.roles )
 
 - id: mistral-executor
   version: 2.1.0
   type: puppet
-  groups: [mistral]
+  groups: [primary-controller, controller, mistral]
   cross-depends:
     - name: mistral-conf
       role: self
@@ -153,4 +152,6 @@
     puppet_manifest: puppet/manifests/executor.pp
     puppet_modules: puppet/modules:/etc/puppet/modules
     timeout: 360
+  condition:
+    yaql_exp: ( $.nodes.where($.role = 'mistral').len() = 0 ) or ( 'mistral' in $.roles )
 
